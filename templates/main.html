@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form method="post">
-  <textarea name="body" style="width: 300px;"></textarea><br />
+<form method="post" id='add-log'>
+  <textarea name="body"></textarea><br />
   <input type="submit" value="Add Log" />
 </form>
 
 {% regroup updates by create_date as grouped_updates %}
 {% for updates in grouped_updates %}
 	<h3>Recent Entries</h3>
-	<h4>{% ifequal updates.grouper today.date %}<span style="text-decoration:underline;">Today</span> - {% endifequal %}{{updates.grouper|date:"l, F j"}}</h4>
+	<h4>{% ifequal updates.grouper today.date %}<span class="underlined">Today</span> - {% endifequal %}{{updates.grouper|date:"l, F j"}}</h4>
 	{% for update in updates.list %}
 		<div class='update-block'>
 		  <p>{{update.body}} | posted {{update.created|timesince}} ago by {{update.user_fullname}} | 
 		    <a href="javascript:void()" onclick="toggleComment({{update.key.id}})" id="comment-link-{{update.key.id}}">Comment</a>
-		    <form action="/comment/{{update.key.id}}" method="post" id="comment-form-{{update.key.id}}" style="display: none;">
+		    <form action="/comment/{{update.key.id}}" method="post" id="comment-form-{{update.key.id}}" class="not-displayed">
 		      <input type="text" name="body" /> <input type="submit" value="Comment" />
 		      <a href="javascript:void()" onclick="toggleComment({{update.key.id}})">Cancel</a>
 		    </form>
 		  </p>
 		  {% for comment in update.comment_set %}
-		    <p style="margin-left: 20px;">
+		    <p class='log-comment'>
 		      {{comment.body}} | posted {{comment.created|timesince}} ago by {{comment.user_fullname}}
 		    </p>
 		  {% endfor %}

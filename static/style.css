@@ -1,11 +1,14 @@
 body { font-family: Verdana,Arial,sans-serif; margin: 0px;}
 #wrapper { margin-left: auto; margin-right: auto; width: 700px; }
+.bold {font-weight: bold;}
+.not-displayed {display: none;}
+.underlined {text-decoration:underline;}
 
 #top a:visited { color: blue;}
 #top { height: 20px; border-bottom: 1px solid #ccc; text-align: right; font-size: 12px; padding-right: 5px; padding-top: 4px; }
 
 #header { margin-left: auto; margin-right: auto; width: 670px; height: 125px;}
-#header img { margin-right: 10px;}
+#header img { margin-right: 10px; float: left;}
 #header h1 { font-size: 42px; margin-top: 20px; padding-top: 10px; margin-bottom: 0px; padding-bottom: 0px;}
 #header h2 { font-size: x-large; margin: 0px; }
 
@@ -33,3 +36,6 @@ h4 { font-size: smaller; }
 #content table { margin-bottom: 20px;}
 
 .update-block {border-bottom: 1px solid #ff0000;}
+
+#add-log textarea {width: 300px;}
+.margin-left: 20px; {margin-left: 20px;}
