@@ -51,6 +51,9 @@ class Update(db.Model):
     def user_fullname(self):
       return fullname(username(self.user))
 
+    def create_date(self):
+        return self.created.date()
+
 class Comment(db.Model):
     user = db.UserProperty(auto_current_user_add=True)
     body = db.StringProperty(required=True)

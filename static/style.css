@@ -31,3 +31,5 @@ h4 { font-size: smaller; }
 .label { font-size: smaller; font-weight: bold; margin-top: 10px;}
 #content h2 { margin-bottom: 5px; margin-top: 5px;}
 #content table { margin-bottom: 20px;}
+
+.update-block {border-bottom: 1px solid #ff0000;}
