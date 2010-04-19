@@ -6,9 +6,10 @@
   <input type="submit" value="Add Log" />
 </form>
 
+<h3>Recent Entries</h3>
+
 {% regroup updates by create_date as grouped_updates %}
 {% for updates in grouped_updates %}
-	<h3>Recent Entries</h3>
 	<h4>{% ifequal updates.grouper today.date %}<span class="underlined">Today</span> - {% endifequal %}{{updates.grouper|date:"l, F j"}}</h4>
 	{% for update in updates.list %}
 		<div class='update-block'>
